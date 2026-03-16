@@ -1,0 +1,47 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.btnPrimary {
+  composes: btn;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy-deep);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
+}
+
+.btnSecondary {
+  composes: btn;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btnSecondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btnLarge {
+  padding: 18px 40px;
+  font-size: 1.05rem;
+}
+
+.btnFull {
+  width: 100%;
+}

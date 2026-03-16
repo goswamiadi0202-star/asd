@@ -1,0 +1,44 @@
+import { client } from '@/sanity/lib/client'
+import { homePageQuery } from '@/sanity/lib/queries'
+import { fallbackData } from '@/lib/fallback-data'
+import type { HomePageData } from '@/lib/types'
+import CursorGlow from '@/components/ui/CursorGlow'
+import Navbar from '@/components/layout/Navbar'
+import Hero from '@/components/sections/Hero'
+import Services from '@/components/sections/Services'
+import Portfolio from '@/components/sections/Portfolio'
+import Process from '@/components/sections/Process'
+import CtaSection from '@/components/sections/CtaSection'
+import Contact from '@/components/sections/Contact'
+import Footer from '@/components/layout/Footer'
+
+async function getData(): Promise<HomePageData> {
+  try {
+    if (!client) return fallbackData
+    const data = await client.fetch<HomePageData>(homePageQuery, {}, { next: { revalidate: 60 } })
+    if (!data.hero) return fallbackData
+    return data
+  } catch {
+    return fallbackData
+  }
+}
+
+export default async function HomePage() {
+  const data = await getData()
+
+  return (
+    <>
+      <CursorGlow />
+      <Navbar logoText={data.settings.logoText} logoSub={data.settings.logoSub} />
+      <main>
+        <Hero hero={data.hero} />
+        <Services services={data.services} />
+        <Portfolio projects={data.projects} />
+        <Process steps={data.processSteps} />
+        <CtaSection cta={data.cta} />
+        <Contact settings={data.settings} />
+      </main>
+      <Footer settings={data.settings} />
+    </>
+  )
+}

@@ -1,0 +1,138 @@
+.testimonials {
+  padding: 120px 0;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+.testimonialsSlider {
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonialTrack {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonialCard {
+  min-width: 100%;
+  padding: 40px;
+  background: var(--card-bg);
+  border: 1px solid var(--dark-border);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.testimonialStars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.starIcon {
+  color: var(--gold);
+}
+
+.testimonialText {
+  font-size: 1.05rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.authorAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--navy-deep);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authorName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.authorRole {
+  font-size: 0.8rem;
+  color: var(--white-muted);
+  margin-top: 2px;
+}
+
+.sliderControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.sliderBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-border);
+  background: transparent;
+  color: var(--white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.sliderDots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sliderDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gray);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.sliderDotActive {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 80px 0;
+  }
+
+  .testimonialCard {
+    padding: 32px 24px;
+  }
+}

@@ -1,0 +1,119 @@
+.footer {
+  padding: 64px 0 32px;
+  border-top: 1px solid var(--dark-border);
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.footerBrand {
+  max-width: 300px;
+}
+
+.footerLogo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.footerLogoSub {
+  color: var(--gold);
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.footerTagline {
+  font-size: 0.9rem;
+  color: var(--white-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.footerLinksGrid {
+  display: flex;
+  gap: 64px;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerCol h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.footerCol a {
+  font-size: 0.9rem;
+  color: var(--white-muted);
+  transition: color 0.3s ease;
+}
+
+.footerCol a:hover {
+  color: var(--gold);
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--dark-border);
+}
+
+.footerBottom p {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.footerBottomLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.footerBottomLinks a {
+  font-size: 0.85rem;
+  color: var(--gray);
+  transition: color 0.3s ease;
+}
+
+.footerBottomLinks a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 968px) {
+  .footerContent {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footerBrand {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 48px 0 24px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footerLinksGrid {
+    gap: 40px;
+  }
+}

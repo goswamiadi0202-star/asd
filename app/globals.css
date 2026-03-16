@@ -1,0 +1,76 @@
+/* ========================================
+   ASD DIGITAL - Global Design Tokens & Reset
+   ======================================== */
+
+:root {
+  --navy-deep: #060d18;
+  --navy: #0a1628;
+  --navy-light: #0f1f38;
+  --navy-lighter: #162a4a;
+  --gold: #c9a84c;
+  --gold-light: #d4b85c;
+  --gold-dark: #a88a3a;
+  --gold-glow: rgba(201, 168, 76, 0.15);
+  --gold-glow-strong: rgba(201, 168, 76, 0.3);
+  --white: #f0ece4;
+  --white-muted: #a8a4a0;
+  --gray: #6b7280;
+  --dark-border: rgba(201, 168, 76, 0.12);
+  --card-bg: rgba(15, 31, 56, 0.6);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--navy-deep);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gold { color: var(--gold); }
+.diamond { color: var(--gold); font-size: 0.6em; vertical-align: middle; }
+
+/* Keyframes */
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.4; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}

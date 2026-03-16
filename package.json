@@ -1,0 +1,26 @@
+{
+  "name": "asd-digital",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@sanity/image-url": "^2.0.3",
+    "@sanity/vision": "^5.16.0",
+    "framer-motion": "^12.37.0",
+    "next": "^16.1.6",
+    "next-sanity": "^12.1.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "resend": "^6.9.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "typescript": "^5.9.3"
+  }
+}
