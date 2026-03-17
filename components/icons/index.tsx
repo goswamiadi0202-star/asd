@@ -107,6 +107,44 @@ export function ScalingIcon({ className, size = 20 }: IconProps) {
   )
 }
 
+export function ShopifyIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M3 9h18" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M9 9v11" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="8" cy="20" r="1.5" fill="currentColor" />
+      <circle cx="16" cy="20" r="1.5" fill="currentColor" />
+      <path d="M12 12h4M12 15h3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+      <rect x="4.5" y="11" width="3" height="3" rx="0.5" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  )
+}
+
+export function MegaphoneIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M18 3v14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M18 5c-2 1-5 2-11 2H5.5A1.5 1.5 0 004 8.5v3A1.5 1.5 0 005.5 13H7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M18 15c-2-1-5-2-9-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7 13l1 6h2l-1-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="20" cy="10" r="1.5" fill="currentColor" opacity="0.6" />
+    </svg>
+  )
+}
+
+export function RocketIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <path d="M12 2C12 2 8 6 8 12c0 3 1.5 5.5 4 7 2.5-1.5 4-4 4-7 0-6-4-10-4-10z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <circle cx="12" cy="11" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M8 12c-2 0-4 1-5 3 1 1 3 1.5 5 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16 12c2 0 4 1 5 3-1 1-3 1.5-5 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 19l-1 3M14 19l1 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export function Send({ className, size = 20 }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
