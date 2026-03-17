@@ -1,0 +1,145 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #060D18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 0.4s ease-in-out 2.3s both;
+}
+
+.logoWrap {
+  width: 220px;
+  height: 220px;
+  animation: scaleDown 0.4s ease-in-out 2.1s both;
+}
+
+.logoWrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Outer ring stroke draw */
+.outerRing {
+  stroke-dasharray: 1822;
+  stroke-dashoffset: 1822;
+  animation: drawRing 0.6s ease-out 0.3s both;
+}
+
+/* Inner circle fade */
+.innerCircle {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out 0.6s both;
+}
+
+/* Inner decorative rings */
+.innerRingA {
+  opacity: 0;
+  animation: fadeInSubtle 0.4s ease-out 0.65s both;
+}
+
+.innerRingB {
+  opacity: 0;
+  animation: fadeInSubtle 0.4s ease-out 0.7s both;
+}
+
+/* Decorative lines */
+.decoLineLeft1,
+.decoLineLeft2,
+.decoLineRight1,
+.decoLineRight2 {
+  opacity: 0;
+  animation: fadeInSubtle 0.3s ease-out 0.75s both;
+}
+
+/* Letters */
+.letterA {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out 0.8s both;
+}
+
+.letterS {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out 0.9s both;
+}
+
+.letterD {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out 1.0s both;
+}
+
+/* Rule lines and diamond */
+.ruleLine {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out 1.2s both;
+}
+
+.ruleLineInner {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out 1.25s both;
+}
+
+.diamond {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out 1.2s both;
+}
+
+/* DIGITAL text */
+.digitalText {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out 1.4s both;
+}
+
+/* Keyframes */
+
+@keyframes drawRing {
+  from {
+    stroke-dashoffset: 1822;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

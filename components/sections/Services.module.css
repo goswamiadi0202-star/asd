@@ -1,5 +1,5 @@
 /* ========================================
-   Services Section — Expanded Showcase
+   Services Section — Clean & Scannable
    ======================================== */
 
 .services {
@@ -93,24 +93,25 @@
 }
 
 .serviceDesc {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: var(--white-muted);
   margin-bottom: 24px;
 }
 
-/* ---- Feature list with gold diamond bullets ---- */
+/* ---- Feature list with gold dot bullets ---- */
 .serviceFeatures {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 28px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-grow: 1;
 }
 
 .serviceFeatures li {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--white-muted);
   padding-left: 20px;
   position: relative;
@@ -118,98 +119,61 @@
 }
 
 .serviceFeatures li::before {
-  content: '\25C6';
+  content: '\25CF';
   position: absolute;
   left: 0;
   color: var(--gold);
   font-size: 0.5em;
   top: 5px;
+}
+
+/* ---- Learn more link ---- */
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: gap 0.3s ease;
+  margin-top: auto;
+}
+
+.serviceLink:hover {
+  gap: 10px;
 }
 
 /* ========================================
-   Growth Services — Bonus section
+   Growth Strip
    ======================================== */
 
-.growthCard {
+.growthStrip {
   margin-top: 40px;
-  position: relative;
-  border-radius: 16px;
-  padding: 2px;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold-dark));
-  background-size: 300% 300%;
-  animation: borderShimmer 6s ease infinite;
-}
-
-@keyframes borderShimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.growthInner {
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.06) 0%, var(--navy-light) 50%, rgba(201, 168, 76, 0.04) 100%);
-  border-radius: 14px;
-  padding: 40px 40px 36px;
-}
-
-.growthHeader {
+  background: rgba(201, 168, 76, 0.03);
+  border: 1px solid var(--dark-border);
+  border-radius: 12px;
+  padding: 24px 32px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 28px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.growthIconWrap {
-  width: 56px;
-  height: 56px;
+.growthItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white-muted);
+  font-size: 0.9rem;
+}
+
+.growthItemIcon {
+  color: var(--gold);
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gold-glow-strong);
-  border: 1px solid var(--gold);
-  border-radius: 12px;
-  color: var(--gold);
   flex-shrink: 0;
-}
-
-.growthTitle {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 6px;
-}
-
-.growthDesc {
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: var(--white-muted);
-}
-
-.growthFeatures {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px 32px;
-}
-
-.growthFeatures li {
-  font-size: 0.88rem;
-  color: var(--white-muted);
-  padding-left: 20px;
-  position: relative;
-  line-height: 1.55;
-}
-
-.growthFeatures li::before {
-  content: '\25C6';
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-size: 0.5em;
-  top: 5px;
 }
 
 /* ========================================
@@ -219,27 +183,18 @@
 @media (max-width: 1024px) {
   .servicesGrid {
     grid-template-columns: 1fr;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
-  }
-
-  .growthFeatures {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) {
-  .growthFeatures {
-    grid-template-columns: 1fr;
-  }
-
-  .growthHeader {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .growthInner {
-    padding: 32px 24px 28px;
+  .growthStrip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: start;
+    padding: 24px;
   }
 }
 
@@ -254,5 +209,9 @@
 
   .serviceCard {
     padding: 32px 24px 28px;
+  }
+
+  .growthStrip {
+    padding: 20px 16px;
   }
 }

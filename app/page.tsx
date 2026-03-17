@@ -2,6 +2,7 @@ import { client } from '@/sanity/lib/client'
 import { homePageQuery } from '@/sanity/lib/queries'
 import { fallbackData } from '@/lib/fallback-data'
 import type { HomePageData } from '@/lib/types'
+import IntroAnimation from '@/components/ui/IntroAnimation'
 import CursorGlow from '@/components/ui/CursorGlow'
 import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/sections/Hero'
@@ -28,6 +29,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <IntroAnimation />
       <CursorGlow />
       <Navbar logoText={data.settings.logoText} logoSub={data.settings.logoSub} />
       <main>
