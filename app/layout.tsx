@@ -32,14 +32,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body style={{ fontFamily: 'var(--font-body)' }}>
-        {/* Hidden form for Netlify Forms detection */}
-        <form name="contact" data-netlify="true" hidden>
-          <input type="hidden" name="form-name" value="contact" />
-          <input name="name" />
-          <input name="email" />
-          <input name="service" />
-          <textarea name="message" />
-        </form>
         {children}
       </body>
     </html>
