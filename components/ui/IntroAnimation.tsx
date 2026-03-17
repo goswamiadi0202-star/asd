@@ -99,10 +99,10 @@ export default function IntroAnimation() {
             {/* Letter A - behind, left side */}
             <text
               className={styles.letterA}
-              x="120" y="510"
+              x="115" y="500"
               fontFamily="'Playfair Display',serif"
               fontWeight="900"
-              fontSize="340"
+              fontSize="320"
               fill="url(#intro-gold-gradient)"
               opacity="0.75"
             >
@@ -112,10 +112,10 @@ export default function IntroAnimation() {
             {/* Letter D (outline) - right side, behind S */}
             <text
               className={styles.letterD}
-              x="310" y="510"
+              x="330" y="500"
               fontFamily="'Playfair Display',serif"
               fontWeight="900"
-              fontSize="340"
+              fontSize="320"
               fill="none"
               stroke="url(#intro-gold-gradient)"
               strokeWidth="3"
@@ -127,10 +127,10 @@ export default function IntroAnimation() {
             {/* Letter S - on top, overlapping center */}
             <text
               className={styles.letterS}
-              x="210" y="510"
+              x="195" y="500"
               fontFamily="'Playfair Display',serif"
               fontWeight="900"
-              fontSize="340"
+              fontSize="320"
               fill="url(#intro-gold-gradient)"
             >
               S
@@ -139,26 +139,26 @@ export default function IntroAnimation() {
             {/* Rule lines */}
             <line
               className={styles.ruleLine}
-              x1="140" y1="560" x2="540" y2="560"
+              x1="140" y1="570" x2="540" y2="570"
               stroke="#D4A853" strokeWidth="0.8" opacity="0.2"
             />
             <line
               className={styles.ruleLineInner}
-              x1="175" y1="553" x2="505" y2="553"
+              x1="175" y1="563" x2="505" y2="563"
               stroke="#D4A853" strokeWidth="0.4" opacity="0.1"
             />
 
             {/* Diamond */}
             <polygon
               className={styles.diamond}
-              points="340,550 345,560 340,570 335,560"
+              points="340,560 345,570 340,580 335,570"
               fill="#D4A853" opacity="0.35"
             />
 
             {/* DIGITAL text */}
             <text
               className={styles.digitalText}
-              x="340" y="618"
+              x="340" y="625"
               textAnchor="middle"
               fontFamily="'Cormorant Garamond',serif"
               fontWeight="600"
