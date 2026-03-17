@@ -106,9 +106,9 @@ export default function Navbar({ logoText, logoSub }: NavbarProps) {
               <line x1="60" y1="348" x2="115" y2="348" stroke="#D4A853" strokeWidth="0.4" opacity="0.08" />
               <line x1="550" y1="340" x2="620" y2="340" stroke="#D4A853" strokeWidth="0.8" opacity="0.12" />
               <line x1="565" y1="348" x2="620" y2="348" stroke="#D4A853" strokeWidth="0.4" opacity="0.08" />
-              <text x="148" y="480" fontFamily="'Playfair Display',serif" fontWeight="900" fontSize="300" fill="url(#nav-gold-gradient)" opacity="0.75">A</text>
-              <text x="355" y="480" fontFamily="'Playfair Display',serif" fontWeight="900" fontSize="300" fill="none" stroke="url(#nav-gold-gradient)" strokeWidth="3" opacity="0.6">D</text>
-              <text x="228" y="480" fontFamily="'Playfair Display',serif" fontWeight="900" fontSize="300" fill="url(#nav-gold-gradient)">S</text>
+              <text x="120" y="510" fontFamily="'Playfair Display',serif" fontWeight="900" fontSize="340" fill="url(#nav-gold-gradient)" opacity="0.75">A</text>
+              <text x="310" y="510" fontFamily="'Playfair Display',serif" fontWeight="900" fontSize="340" fill="none" stroke="url(#nav-gold-gradient)" strokeWidth="3" opacity="0.6">D</text>
+              <text x="210" y="510" fontFamily="'Playfair Display',serif" fontWeight="900" fontSize="340" fill="url(#nav-gold-gradient)">S</text>
               <line x1="140" y1="560" x2="540" y2="560" stroke="#D4A853" strokeWidth="0.8" opacity="0.2" />
               <line x1="175" y1="553" x2="505" y2="553" stroke="#D4A853" strokeWidth="0.4" opacity="0.1" />
               <polygon points="340,550 345,560 340,570 335,560" fill="#D4A853" opacity="0.35" />

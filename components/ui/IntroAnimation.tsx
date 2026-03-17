@@ -96,44 +96,44 @@ export default function IntroAnimation() {
               stroke="#D4A853" strokeWidth="0.4" opacity="0.08"
             />
 
-            {/* Letter A */}
+            {/* Letter A - behind, left side */}
             <text
               className={styles.letterA}
-              x="148" y="480"
+              x="120" y="510"
               fontFamily="'Playfair Display',serif"
               fontWeight="900"
-              fontSize="300"
+              fontSize="340"
               fill="url(#intro-gold-gradient)"
               opacity="0.75"
             >
               A
             </text>
 
-            {/* Letter S */}
-            <text
-              className={styles.letterS}
-              x="228" y="480"
-              fontFamily="'Playfair Display',serif"
-              fontWeight="900"
-              fontSize="300"
-              fill="url(#intro-gold-gradient)"
-            >
-              S
-            </text>
-
-            {/* Letter D (outline) */}
+            {/* Letter D (outline) - right side, behind S */}
             <text
               className={styles.letterD}
-              x="355" y="480"
+              x="310" y="510"
               fontFamily="'Playfair Display',serif"
               fontWeight="900"
-              fontSize="300"
+              fontSize="340"
               fill="none"
               stroke="url(#intro-gold-gradient)"
               strokeWidth="3"
               opacity="0.6"
             >
               D
+            </text>
+
+            {/* Letter S - on top, overlapping center */}
+            <text
+              className={styles.letterS}
+              x="210" y="510"
+              fontFamily="'Playfair Display',serif"
+              fontWeight="900"
+              fontSize="340"
+              fill="url(#intro-gold-gradient)"
+            >
+              S
             </text>
 
             {/* Rule lines */}
