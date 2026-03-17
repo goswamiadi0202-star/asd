@@ -61,6 +61,24 @@ export async function submitContact(
       })
     }
 
+    // Submit to Netlify Forms
+    try {
+      const netlifyData = new URLSearchParams({
+        'form-name': 'contact',
+        name: result.data.name,
+        email: result.data.email,
+        service: result.data.service,
+        message: result.data.message,
+      })
+      await fetch(process.env.NEXT_PUBLIC_SITE_URL || 'https://asd-digital.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: netlifyData.toString(),
+      })
+    } catch {
+      // Netlify Forms submission failed silently — other methods may still work
+    }
+
     return { success: true }
   } catch {
     return { error: 'Something went wrong. Please try again.' }
