@@ -9,7 +9,7 @@ export default function IntroAnimation() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true)
-    }, 2700)
+    }, 3100)
     return () => clearTimeout(timer)
   }, [])
 
