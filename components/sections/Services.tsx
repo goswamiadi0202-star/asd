@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef, useCallback } from 'react'
 import { Service } from '@/lib/types'
 import SectionHeader from '@/components/ui/SectionHeader'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
@@ -8,6 +9,49 @@ import styles from './Services.module.css'
 
 interface ServicesProps {
   services: Service[]
+}
+
+function TiltCard({ children }: { children: React.ReactNode }) {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const glowRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current
+    const glow = glowRef.current
+    if (!card || !glow) return
+
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+
+    const rotateX = ((y - centerY) / centerY) * -8
+    const rotateY = ((x - centerX) / centerX) * 8
+
+    card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`
+    glow.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(201, 168, 76, 0.15), transparent 60%)`
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    const card = cardRef.current
+    const glow = glowRef.current
+    if (!card || !glow) return
+    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
+    glow.style.background = 'transparent'
+  }, [])
+
+  return (
+    <div
+      ref={cardRef}
+      className={styles.tiltWrapper}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div ref={glowRef} className={styles.tiltGlow} />
+      {children}
+    </div>
+  )
 }
 
 const serviceCards = [
@@ -96,25 +140,27 @@ export default function Services({}: ServicesProps) {
             const IconComponent = card.icon
             return (
               <RevealOnScroll key={card.id} delay={i * 150}>
-                <div className={styles.serviceCard}>
-                  <div className={styles.cardTopLine} />
-                  <div className={styles.serviceIcon}>
-                    <IconComponent size={28} />
+                <TiltCard>
+                  <div className={styles.serviceCard}>
+                    <div className={styles.cardTopLine} />
+                    <div className={styles.serviceIcon}>
+                      <IconComponent size={28} />
+                    </div>
+                    <h3 className={styles.serviceTitle}>{card.title}</h3>
+                    <p className={styles.serviceDesc}>{card.description}</p>
+                    <ul className={styles.serviceFeatures}>
+                      {card.features.map((feature, fi) => (
+                        <li key={fi}>{feature}</li>
+                      ))}
+                    </ul>
+                    <a href="#contact" className={styles.serviceLink}>
+                      Learn more
+                      <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
                   </div>
-                  <h3 className={styles.serviceTitle}>{card.title}</h3>
-                  <p className={styles.serviceDesc}>{card.description}</p>
-                  <ul className={styles.serviceFeatures}>
-                    {card.features.map((feature, fi) => (
-                      <li key={fi}>{feature}</li>
-                    ))}
-                  </ul>
-                  <a href="#contact" className={styles.serviceLink}>
-                    Learn more
-                    <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </a>
-                </div>
+                </TiltCard>
               </RevealOnScroll>
             )
           })}

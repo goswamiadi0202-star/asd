@@ -32,6 +32,24 @@
   gap: 28px;
 }
 
+/* ---- 3D Tilt Wrapper ---- */
+.tiltWrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+  height: 100%;
+}
+
+.tiltGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+
 /* ---- Service Card ---- */
 .serviceCard {
   position: relative;
@@ -39,7 +57,7 @@
   border: 1px solid var(--dark-border);
   border-radius: 16px;
   padding: 40px 32px 36px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -58,13 +76,18 @@
   border-radius: 16px 16px 0 0;
 }
 
-.serviceCard:hover {
-  transform: translateY(-6px);
+.tiltWrapper:hover .serviceCard {
   border-color: var(--gold);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px var(--gold-glow);
 }
 
-.serviceCard:hover .cardTopLine {
+.serviceCard:hover {
+  border-color: var(--gold);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px var(--gold-glow);
+}
+
+.serviceCard:hover .cardTopLine,
+.tiltWrapper:hover .cardTopLine {
   transform: scaleX(1);
 }
 
