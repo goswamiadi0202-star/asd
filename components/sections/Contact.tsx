@@ -24,16 +24,18 @@ export default function Contact({ settings }: ContactProps) {
     e.preventDefault()
     setIsPending(true)
     const form = e.currentTarget
-    const formData = new URLSearchParams(new FormData(form) as unknown as Record<string, string>)
+    const formData = new FormData(form)
 
     try {
-      await fetch('/', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString(),
+        body: formData,
       })
-      setSubmitted(true)
+      if (res.ok) {
+        setSubmitted(true)
+      }
     } catch {
+      // still show success to user
       setSubmitted(true)
     }
     setIsPending(false)
@@ -93,13 +95,11 @@ export default function Contact({ settings }: ContactProps) {
                 </div>
               ) : (
                 <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
                   onSubmit={handleSubmit}
                   className={styles.contactForm}
                 >
-                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220" />
+                  <input type="hidden" name="subject" value="New Contact Form Submission - ASD Digital" />
                   <div className={styles.formGroup}>
                     <input
                       type="text"
