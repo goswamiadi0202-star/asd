@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import type { SiteSettings } from '@/lib/types'
-import { submitContact, type ContactState } from '@/app/actions/contact'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import { Mail, Phone, Instagram, LinkedIn, TwitterX, Send } from '@/components/icons'
 import styles from './Contact.module.css'
@@ -18,15 +17,25 @@ const socialIcons = {
 } as const
 
 export default function Contact({ settings }: ContactProps) {
-  const [state, setState] = useState<ContactState>(null)
+  const [submitted, setSubmitted] = useState(false)
   const [isPending, setIsPending] = useState(false)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setIsPending(true)
-    const formData = new FormData(e.currentTarget)
-    const result = await submitContact(null, formData)
-    setState(result)
+    const form = e.currentTarget
+    const formData = new URLSearchParams(new FormData(form) as unknown as Record<string, string>)
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+      })
+      setSubmitted(true)
+    } catch {
+      setSubmitted(true)
+    }
     setIsPending(false)
   }
 
@@ -76,14 +85,21 @@ export default function Contact({ settings }: ContactProps) {
 
           <RevealOnScroll delay={200}>
             <div className={styles.contactFormWrapper}>
-              {state?.success ? (
+              {submitted ? (
                 <div className={styles.formSuccess}>
                   <div className={styles.successIcon}>&#10003;</div>
                   <h3>Message Sent!</h3>
                   <p>We&apos;ll get back to you within 24 hours.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className={styles.contactForm}>
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  onSubmit={handleSubmit}
+                  className={styles.contactForm}
+                >
+                  <input type="hidden" name="form-name" value="contact" />
                   <div className={styles.formGroup}>
                     <input
                       type="text"
@@ -136,11 +152,7 @@ export default function Contact({ settings }: ContactProps) {
                     <label htmlFor="message" className={styles.formLabel}>Your Message</label>
                   </div>
 
-                  {state?.error && (
-                    <p className={styles.formError}>{state.error}</p>
-                  )}
-
-                  <button type="submit" disabled={isPending} className={styles.submitBtn}>
+<button type="submit" disabled={isPending} className={styles.submitBtn}>
                     {isPending ? 'Sending...' : (
                       <>
                         Send Message
