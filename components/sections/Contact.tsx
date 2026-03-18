@@ -100,6 +100,7 @@ export default function Contact({ settings }: ContactProps) {
                 >
                   <input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220" />
                   <input type="hidden" name="subject" value="New Contact Form Submission - ASD Digital" />
+                  <input type="hidden" name="cc" value="david.cortes@asd-digital.com,shrish.raja@asd-digital.com" />
                   <div className={styles.formGroup}>
                     <input
                       type="text"
