@@ -10,7 +10,6 @@ import Services from '@/components/sections/Services'
 import Portfolio from '@/components/sections/Portfolio'
 import Process from '@/components/sections/Process'
 import CtaSection from '@/components/sections/CtaSection'
-import StartProject from '@/components/sections/StartProject'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
 
@@ -39,7 +38,6 @@ export default async function HomePage() {
         <Portfolio projects={data.projects} />
         <Process steps={data.processSteps} />
         <CtaSection cta={data.cta} />
-        <StartProject />
         <Contact settings={data.settings} />
       </main>
       <Footer settings={data.settings} />
