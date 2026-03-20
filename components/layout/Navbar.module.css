@@ -96,6 +96,31 @@
   transform: translateX(-50%) scaleX(1);
 }
 
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--white-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.phoneLink:hover {
+  color: var(--gold);
+}
+
+.phoneIcon {
+  flex-shrink: 0;
+}
+
+.phoneText {
+  white-space: nowrap;
+}
+
 .ctaLink {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: var(--navy-deep) !important;
@@ -190,6 +215,13 @@
     padding: 12px 24px;
     width: 100%;
     text-align: center;
+  }
+
+  .phoneLink {
+    font-size: 1rem;
+    padding: 12px 24px;
+    width: 100%;
+    justify-content: center;
   }
 
   .ctaLink {

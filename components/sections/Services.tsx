@@ -61,7 +61,6 @@ const serviceCards = [
     title: 'Website Design & Development',
     description:
       'Custom websites built to get your phone ringing. Mobile-first, fast loading, SEO-ready.',
-    price: 'Starting at $997',
     features: [
       'Custom design, no templates',
       'Mobile-first & lightning fast',
@@ -74,13 +73,12 @@ const serviceCards = [
     icon: ShopifyIcon,
     title: 'E-Commerce (Shopify)',
     description:
-      'Full Shopify store setup, branded, launch-ready. Products loaded, payments configured, training included.',
-    price: 'Starting at $1,997',
+      'Full Shopify store setup. Branded, launch-ready, with training so you can manage it yourself.',
     features: [
       'Complete Shopify setup',
       'Custom branded design',
       'Payment & shipping handled',
-      'Training so you can manage it yourself',
+      'Training included',
     ],
   },
   {
@@ -88,13 +86,12 @@ const serviceCards = [
     icon: MegaphoneIcon,
     title: 'Paid Advertising',
     description:
-      'Google Ads, Facebook, Instagram, TikTok, Nextdoor. Custom landing pages and monthly reporting included.',
-    price: 'Starting at $497/mo',
+      'Google Ads, Facebook, Instagram, TikTok, Nextdoor. We manage it all, you get the leads.',
     features: [
       'Google, Meta, TikTok & more',
       'Custom landing pages for every campaign',
-      'Monthly reporting you can actually understand',
-      'We manage it all, you get the leads',
+      'Monthly reporting in plain English',
+      'Full campaign management',
     ],
   },
 ]
@@ -150,7 +147,6 @@ export default function Services({}: ServicesProps) {
                       <IconComponent size={28} />
                     </div>
                     <h3 className={styles.serviceTitle}>{card.title}</h3>
-                    <p className={styles.servicePrice}>{card.price}</p>
                     <p className={styles.serviceDesc}>{card.description}</p>
                     <ul className={styles.serviceFeatures}>
                       {card.features.map((feature, fi) => (

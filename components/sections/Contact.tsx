@@ -170,10 +170,12 @@ export default function Contact({ settings }: ContactProps) {
                       className={styles.formSelect}
                     >
                       <option value="" disabled>Select a Service</option>
-                      <option value="Web Design & Development">Web Design &amp; Development</option>
-                      <option value="Paid Advertising">Paid Advertising</option>
-                      <option value="Business Scaling">Business Scaling</option>
-                      <option value="Full Strategy Package">Full Strategy Package</option>
+                      <option value="Website Design & Development">Website Design &amp; Development</option>
+                      <option value="E-Commerce (Shopify)">E-Commerce (Shopify)</option>
+                      <option value="Paid Advertising (Google, Meta, TikTok)">Paid Advertising (Google, Meta, TikTok)</option>
+                      <option value="Website + Ads Bundle">Website + Ads Bundle</option>
+                      <option value="Monthly Website Management">Monthly Website Management</option>
+                      <option value="Not Sure — I Need Advice">Not Sure — I Need Advice</option>
                     </select>
                   </div>
 

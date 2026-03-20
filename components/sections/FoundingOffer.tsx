@@ -12,11 +12,9 @@ export default function FoundingOffer() {
               <div className={styles.badge}>Limited Offer</div>
               <h3 className={styles.title}>3 Founding Client Spots Available</h3>
               <div className={styles.details}>
-                <p className={styles.price}>
-                  <span className={styles.priceAmount}>$500</span> website build +{' '}
-                  <span className={styles.priceAmount}>$250/mo</span> management
+                <p className={styles.desc}>
+                  We&apos;re selecting 3 Phoenix-area businesses to work with at a heavily discounted rate in exchange for a video testimonial.
                 </p>
-                <p className={styles.terms}>Phoenix area only. Video testimonial required.</p>
               </div>
               <a href="#contact" className={styles.cta}>
                 Claim Your Spot &rarr;

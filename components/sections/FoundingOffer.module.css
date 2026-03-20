@@ -59,21 +59,12 @@
   margin-bottom: 24px;
 }
 
-.price {
-  font-size: 1.1rem;
+.desc {
+  font-size: 1rem;
   color: var(--white-muted);
-  margin-bottom: 8px;
-}
-
-.priceAmount {
-  color: var(--gold);
-  font-weight: 700;
-}
-
-.terms {
-  font-size: 0.9rem;
-  color: var(--gray);
-  font-style: italic;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .cta {
