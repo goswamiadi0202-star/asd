@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type { SiteSettings } from '@/lib/types'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import { Mail, Phone, Instagram, LinkedIn, TwitterX, Send } from '@/components/icons'
@@ -19,12 +19,38 @@ const socialIcons = {
 export default function Contact({ settings }: ContactProps) {
   const [submitted, setSubmitted] = useState(false)
   const [isPending, setIsPending] = useState(false)
+  const [rateLimited, setRateLimited] = useState(false)
+  const loadTime = useRef(Date.now())
+
+  useEffect(() => {
+    loadTime.current = Date.now()
+  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setIsPending(true)
+
+    // Minimum time check — reject if submitted < 3 seconds after load
+    if (Date.now() - loadTime.current < 3000) return
+
+    // Rate limiting — max 3 submissions per 5 minutes
+    const now = Date.now()
+    const key = 'asd_contact_submissions'
+    const stored = JSON.parse(sessionStorage.getItem(key) || '[]') as number[]
+    const recent = stored.filter((t: number) => now - t < 300000)
+    if (recent.length >= 3) {
+      setRateLimited(true)
+      return
+    }
+
+    // Honeypot check
     const form = e.currentTarget
     const formData = new FormData(form)
+    if (formData.get('company_url')) return
+
+    setIsPending(true)
+
+    // Remove honeypot before sending
+    formData.delete('company_url')
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -33,9 +59,9 @@ export default function Contact({ settings }: ContactProps) {
       })
       if (res.ok) {
         setSubmitted(true)
+        sessionStorage.setItem(key, JSON.stringify([...recent, now]))
       }
     } catch {
-      // still show success to user
       setSubmitted(true)
     }
     setIsPending(false)
@@ -87,7 +113,13 @@ export default function Contact({ settings }: ContactProps) {
 
           <RevealOnScroll delay={200}>
             <div className={styles.contactFormWrapper}>
-              {submitted ? (
+              {rateLimited ? (
+                <div className={styles.formSuccess}>
+                  <div className={styles.successIcon}>&#10003;</div>
+                  <h3>Already Submitted</h3>
+                  <p>You&apos;ve already submitted this form. We&apos;ll be in touch soon.</p>
+                </div>
+              ) : submitted ? (
                 <div className={styles.formSuccess}>
                   <div className={styles.successIcon}>&#10003;</div>
                   <h3>Message Sent!</h3>
@@ -101,6 +133,10 @@ export default function Contact({ settings }: ContactProps) {
                   <input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220" />
                   <input type="hidden" name="subject" value="New Contact Form Submission - ASD Digital" />
                   <input type="hidden" name="cc" value="david.cortes@asd-digital.com,shrish.raja@asd-digital.com" />
+                  {/* Honeypot — hidden from real users */}
+                  <div style={{ position: 'absolute', left: '-9999px', opacity: 0 }} aria-hidden="true">
+                    <input type="text" name="company_url" tabIndex={-1} autoComplete="off" />
+                  </div>
                   <div className={styles.formGroup}>
                     <input
                       type="text"

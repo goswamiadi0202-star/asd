@@ -9,7 +9,9 @@ import Hero from '@/components/sections/Hero'
 import Services from '@/components/sections/Services'
 import Portfolio from '@/components/sections/Portfolio'
 import Process from '@/components/sections/Process'
+import Packages from '@/components/sections/Packages'
 import CtaSection from '@/components/sections/CtaSection'
+import FoundingOffer from '@/components/sections/FoundingOffer'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
 
@@ -36,8 +38,10 @@ export default async function HomePage() {
         <Hero hero={data.hero} />
         <Services services={data.services} />
         <Portfolio projects={data.projects} />
+        <Packages />
         <Process steps={data.processSteps} />
         <CtaSection cta={data.cta} />
+        <FoundingOffer />
         <Contact settings={data.settings} />
       </main>
       <Footer settings={data.settings} />

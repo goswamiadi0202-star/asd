@@ -32,6 +32,24 @@
   color: var(--white-muted);
   font-weight: 300;
   line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footerContact p,
+.footerContact a {
+  font-size: 0.85rem;
+  color: var(--white-muted);
+  transition: color 0.3s ease;
+}
+
+.footerContact a:hover {
+  color: var(--gold);
 }
 
 .footerLinksGrid {

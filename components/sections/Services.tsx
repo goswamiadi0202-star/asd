@@ -58,9 +58,10 @@ const serviceCards = [
   {
     id: 'websites',
     icon: WebsiteIcon,
-    title: 'Websites That Convert',
+    title: 'Website Design & Development',
     description:
-      'Custom-built websites designed to turn visitors into customers. Fast, mobile-friendly, and built to make your phone ring.',
+      'Custom websites built to get your phone ringing. Mobile-first, fast loading, SEO-ready.',
+    price: 'Starting at $997',
     features: [
       'Custom design, no templates',
       'Mobile-first & lightning fast',
@@ -71,9 +72,10 @@ const serviceCards = [
   {
     id: 'ecommerce',
     icon: ShopifyIcon,
-    title: 'E-Commerce That Sells',
+    title: 'E-Commerce (Shopify)',
     description:
-      'Full online stores powered by Shopify. We set it up, you run it. Sell products 24/7 with zero headaches.',
+      'Full Shopify store setup, branded, launch-ready. Products loaded, payments configured, training included.',
+    price: 'Starting at $1,997',
     features: [
       'Complete Shopify setup',
       'Custom branded design',
@@ -84,9 +86,10 @@ const serviceCards = [
   {
     id: 'advertising',
     icon: MegaphoneIcon,
-    title: 'Ads That Bring Customers',
+    title: 'Paid Advertising',
     description:
-      'We run ads on Google, Facebook, Instagram, TikTok, and more. Your business shows up exactly where your customers are looking.',
+      'Google Ads, Facebook, Instagram, TikTok, Nextdoor. Custom landing pages and monthly reporting included.',
+    price: 'Starting at $497/mo',
     features: [
       'Google, Meta, TikTok & more',
       'Custom landing pages for every campaign',
@@ -147,6 +150,7 @@ export default function Services({}: ServicesProps) {
                       <IconComponent size={28} />
                     </div>
                     <h3 className={styles.serviceTitle}>{card.title}</h3>
+                    <p className={styles.servicePrice}>{card.price}</p>
                     <p className={styles.serviceDesc}>{card.description}</p>
                     <ul className={styles.serviceFeatures}>
                       {card.features.map((feature, fi) => (

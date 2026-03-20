@@ -16,26 +16,34 @@ export default function Footer({ settings }: FooterProps) {
               <span className={styles.footerLogoSub}>{settings.logoSub}</span>
             </div>
             <p className={styles.footerTagline}>{settings.footerTagline}</p>
+            <div className={styles.footerContact}>
+              <p>ASD Digital LLC</p>
+              <p>Phoenix, Arizona</p>
+              <a href="tel:+16027258949">(602) 725-8949</a>
+              <a href="mailto:aditya.goswami@asd-digital.com">aditya.goswami@asd-digital.com</a>
+              <a href="https://asd-digital.com">asd-digital.com</a>
+            </div>
           </div>
 
           <div className={styles.footerLinksGrid}>
             <div className={styles.footerCol}>
               <h4>Services</h4>
               <a href="#services">Web Design</a>
+              <a href="#services">E-Commerce</a>
               <a href="#services">Paid Ads</a>
-              <a href="#services">Business Scaling</a>
-              <a href="#contact">Strategy</a>
+              <a href="#packages">Packages</a>
             </div>
             <div className={styles.footerCol}>
               <h4>Company</h4>
               <a href="#process">Process</a>
               <a href="#contact">Contact</a>
+              <a href="https://www.instagram.com/asddigital_" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
           </div>
         </div>
 
         <div className={styles.footerBottom}>
-          <p>&copy; 2026 {settings.logoText}. All rights reserved.</p>
+          <p>&copy; 2026 ASD Digital. All rights reserved.</p>
           <div className={styles.footerBottomLinks}>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

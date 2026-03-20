@@ -1,0 +1,105 @@
+.section {
+  padding: 0 0 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.banner {
+  position: relative;
+  background: var(--card-bg);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bannerGlow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--navy-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.details {
+  margin-bottom: 24px;
+}
+
+.price {
+  font-size: 1.1rem;
+  color: var(--white-muted);
+  margin-bottom: 8px;
+}
+
+.priceAmount {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.terms {
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--navy-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 36px 24px;
+  }
+}
