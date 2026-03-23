@@ -4,7 +4,7 @@
 
 .services {
   position: relative;
-  padding: 120px 0;
+  padding: var(--section-padding) 0;
   overflow: hidden;
 }
 
@@ -55,9 +55,9 @@
   position: relative;
   background: var(--card-bg);
   border: 1px solid var(--dark-border);
-  border-radius: 16px;
-  padding: 40px 32px 36px;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 14px;
+  padding: 44px 32px 36px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -73,17 +73,18 @@
   background: linear-gradient(90deg, var(--gold), var(--gold-light));
   transform: scaleX(0);
   transition: transform 0.4s ease;
-  border-radius: 16px 16px 0 0;
+  border-radius: 14px 14px 0 0;
 }
 
 .tiltWrapper:hover .serviceCard {
-  border-color: var(--gold);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px var(--gold-glow);
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35), 0 0 48px var(--gold-glow);
+  transform: translateY(-8px);
 }
 
 .serviceCard:hover {
-  border-color: var(--gold);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 40px var(--gold-glow);
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35), 0 0 48px var(--gold-glow);
 }
 
 .serviceCard:hover .cardTopLine,

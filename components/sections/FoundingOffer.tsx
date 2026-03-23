@@ -10,7 +10,10 @@ export default function FoundingOffer() {
             <div className={styles.bannerGlow} />
             <div className={styles.content}>
               <div className={styles.badge}>Limited Offer</div>
-              <h3 className={styles.title}>3 Founding Client Spots Available</h3>
+              <h3 className={styles.title}>
+                <span className={styles.pulseDot} />
+                3 Founding Client Spots Available
+              </h3>
               <div className={styles.details}>
                 <p className={styles.desc}>
                   We&apos;re selecting 3 Phoenix-area businesses to work with at a heavily discounted rate in exchange for a video testimonial.

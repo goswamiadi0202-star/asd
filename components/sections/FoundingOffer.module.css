@@ -53,6 +53,18 @@
   font-weight: 700;
   color: var(--white);
   margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pulseDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  flex-shrink: 0;
+  animation: pulseDot 1.5s ease-in-out infinite;
 }
 
 .details {
