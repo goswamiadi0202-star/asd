@@ -111,6 +111,26 @@ section:nth-of-type(even) {
   50% { transform: scale(1.5); opacity: 0.5; }
 }
 
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Hide cursor on desktop (custom cursor replaces it) */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;

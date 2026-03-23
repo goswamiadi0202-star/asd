@@ -4,11 +4,13 @@ import { fallbackData } from '@/lib/fallback-data'
 import type { HomePageData } from '@/lib/types'
 import IntroAnimation from '@/components/ui/IntroAnimation'
 import CursorGlow from '@/components/ui/CursorGlow'
+import SmoothScroll from '@/components/ui/SmoothScroll'
 import Navbar from '@/components/layout/Navbar'
 import Hero from '@/components/sections/Hero'
 import Marquee from '@/components/sections/Marquee'
 import Services from '@/components/sections/Services'
 import Differentiators from '@/components/sections/Differentiators'
+import PortfolioPreview from '@/components/sections/PortfolioPreview'
 import Portfolio from '@/components/sections/Portfolio'
 import Process from '@/components/sections/Process'
 import Packages from '@/components/sections/Packages'
@@ -35,12 +37,14 @@ export default async function HomePage() {
     <>
       <IntroAnimation />
       <CursorGlow />
+      <SmoothScroll />
       <Navbar logoText={data.settings.logoText} logoSub={data.settings.logoSub} />
       <main>
         <Hero hero={data.hero} />
         <Marquee />
         <Services services={data.services} />
         <Differentiators />
+        <PortfolioPreview />
         <Portfolio projects={data.projects} />
         <Packages />
         <Process steps={data.processSteps} />
