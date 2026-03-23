@@ -7,17 +7,12 @@ export default function IntroAnimation() {
     const overlay = document.getElementById('intro-overlay')
     if (!overlay || overlay.classList.contains('io-go')) return
 
-    // Trigger animations
     overlay.classList.add('io-go')
-    document.body.style.overflow = 'hidden'
     document.body.classList.add('page-loaded')
 
     setTimeout(() => {
       overlay.style.display = 'none'
-      document.body.style.overflow = ''
-    }, 4500)
-
-    // No cleanup — let the animation finish regardless of React strict mode
+    }, 3200)
   }, [])
 
   return null

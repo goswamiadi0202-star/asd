@@ -128,46 +128,40 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Intro animation — renders before React hydration */}
+        {/* Intro animation — logo reveal, flies to navbar corner */}
         <div
           id="intro-overlay"
           dangerouslySetInnerHTML={{
             __html: `
-              <div class="io-glow"></div>
-              <div class="io-line io-lt"></div>
-              <div class="io-line io-lb"></div>
-              <div class="io-center">
-                <div class="io-logo">
-                  <svg viewBox="60 100 560 560" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#D4A853"/>
-                        <stop offset="50%" stop-color="#F0D68A"/>
-                        <stop offset="100%" stop-color="#C4943A"/>
-                      </linearGradient>
-                      <clipPath id="ic"><circle cx="340" cy="380" r="280"/></clipPath>
-                    </defs>
-                    <circle class="io-ring" cx="340" cy="380" r="290" fill="none" stroke="#D4A853" stroke-width="1.5"/>
-                    <circle cx="340" cy="380" r="280" fill="#0C1A2E"/>
-                    <circle cx="340" cy="380" r="270" fill="none" stroke="#D4A853" stroke-width="0.5" opacity="0.15"/>
-                    <g clip-path="url(#ic)">
-                      <line x1="60" y1="340" x2="130" y2="340" stroke="#D4A853" stroke-width="0.8" opacity="0.12"/>
-                      <line x1="550" y1="340" x2="620" y2="340" stroke="#D4A853" stroke-width="0.8" opacity="0.12"/>
-                      <text x="115" y="500" font-family="'Playfair Display',serif" font-weight="900" font-size="320" fill="url(#ig)" opacity="0.75">A</text>
-                      <text x="330" y="500" font-family="'Playfair Display',serif" font-weight="900" font-size="320" fill="none" stroke="url(#ig)" stroke-width="3" opacity="0.6">D</text>
-                      <text x="195" y="500" font-family="'Playfair Display',serif" font-weight="900" font-size="320" fill="url(#ig)">S</text>
-                      <line x1="140" y1="570" x2="540" y2="570" stroke="#D4A853" stroke-width="0.8" opacity="0.2"/>
-                      <polygon points="340,560 345,570 340,580 335,570" fill="#D4A853" opacity="0.35"/>
-                      <text x="340" y="625" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="600" font-size="24" letter-spacing="16" fill="#D4A853" opacity="0.45">DIGITAL</text>
-                    </g>
-                  </svg>
-                </div>
-                <div class="io-tag">
-                  <span>Websites</span><span class="io-dot"></span><span>Ads</span><span class="io-dot"></span><span>Growth</span>
-                </div>
+              <div class="io-logo-wrap">
+                <svg viewBox="60 100 560 560" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#D4A853"/>
+                      <stop offset="50%" stop-color="#F0D68A"/>
+                      <stop offset="100%" stop-color="#C4943A"/>
+                    </linearGradient>
+                    <clipPath id="ic"><circle cx="340" cy="380" r="280"/></clipPath>
+                  </defs>
+                  <circle class="io-outer-ring" cx="340" cy="380" r="290" fill="none" stroke="#D4A853" stroke-width="1" opacity="0.2"/>
+                  <circle class="io-inner-circle" cx="340" cy="380" r="280" fill="#0C1A2E"/>
+                  <circle class="io-deco-ring-a" cx="340" cy="380" r="270" fill="none" stroke="#D4A853" stroke-width="0.5" opacity="0.12"/>
+                  <circle class="io-deco-ring-b" cx="340" cy="380" r="262" fill="none" stroke="#D4A853" stroke-width="0.5" opacity="0.06"/>
+                  <g clip-path="url(#ic)">
+                    <line class="io-deco" x1="60" y1="340" x2="130" y2="340" stroke="#D4A853" stroke-width="0.8" opacity="0.12"/>
+                    <line class="io-deco" x1="60" y1="348" x2="115" y2="348" stroke="#D4A853" stroke-width="0.4" opacity="0.08"/>
+                    <line class="io-deco" x1="550" y1="340" x2="620" y2="340" stroke="#D4A853" stroke-width="0.8" opacity="0.12"/>
+                    <line class="io-deco" x1="565" y1="348" x2="620" y2="348" stroke="#D4A853" stroke-width="0.4" opacity="0.08"/>
+                    <text class="io-letter-a" x="115" y="500" font-family="'Playfair Display',serif" font-weight="900" font-size="320" fill="url(#ig)" opacity="0.75">A</text>
+                    <text class="io-letter-d" x="330" y="500" font-family="'Playfair Display',serif" font-weight="900" font-size="320" fill="none" stroke="url(#ig)" stroke-width="3" opacity="0.6">D</text>
+                    <text class="io-letter-s" x="195" y="500" font-family="'Playfair Display',serif" font-weight="900" font-size="320" fill="url(#ig)">S</text>
+                    <line class="io-rule" x1="140" y1="570" x2="540" y2="570" stroke="#D4A853" stroke-width="0.8" opacity="0.2"/>
+                    <line class="io-rule-inner" x1="175" y1="563" x2="505" y2="563" stroke="#D4A853" stroke-width="0.4" opacity="0.1"/>
+                    <polygon class="io-diamond" points="340,560 345,570 340,580 335,570" fill="#D4A853" opacity="0.35"/>
+                    <text class="io-digital" x="340" y="625" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-weight="600" font-size="24" letter-spacing="16" fill="#D4A853" opacity="0.45">DIGITAL</text>
+                  </g>
+                </svg>
               </div>
-              <div class="io-curtain io-cl"></div>
-              <div class="io-curtain io-cr"></div>
             `,
           }}
         />

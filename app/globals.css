@@ -161,85 +161,71 @@ html.lenis, html.lenis body {
 }
 
 /* ========================================
-   Intro Animation — Pure CSS, runs before React
+   Intro Animation — Logo reveal, flies to navbar
    ======================================== */
 #intro-overlay {
   position: fixed; inset: 0; z-index: 100000;
-  background: #040a14;
+  background: #060D18;
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
   pointer-events: none;
 }
 #intro-overlay.io-go {
-  animation: io-exit 0.6s ease-in-out 3.6s both;
+  animation: io-bg-out 0.5s ease-in-out 2.5s both;
 }
-#intro-overlay.io-go .io-glow { animation: io-fade 1s ease 0.8s both; }
-#intro-overlay.io-go .io-line { animation: io-line 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
-#intro-overlay.io-go .io-center { animation: io-cout 0.4s ease 3.4s both; }
-#intro-overlay.io-go .io-logo { animation: io-lin 0.9s cubic-bezier(0.16,1,0.3,1) 0.9s both; }
-#intro-overlay.io-go .io-ring { animation: io-ring 1.4s cubic-bezier(0.16,1,0.3,1) 0.9s both; }
-#intro-overlay.io-go .io-tag { animation: io-tin 0.6s ease 2.0s both; }
-#intro-overlay.io-go .io-cl { animation: io-cl 0.7s cubic-bezier(0.76,0,0.24,1) 3.5s both; }
-#intro-overlay.io-go .io-cr { animation: io-cr 0.7s cubic-bezier(0.76,0,0.24,1) 3.5s both; }
-#intro-overlay .io-glow {
-  position: absolute; width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 60%);
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  opacity: 0;
+#intro-overlay .io-logo-wrap {
+  width: 220px; height: 220px;
 }
-#intro-overlay .io-line {
-  position: absolute; left: 0; width: 100%; height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.4) 20%, rgba(201,168,76,0.6) 50%, rgba(201,168,76,0.4) 80%, transparent 100%);
-  transform: scaleX(0);
+#intro-overlay.io-go .io-logo-wrap {
+  animation: io-fly 0.7s cubic-bezier(0.4,0,0.2,1) 2.1s both;
 }
-#intro-overlay .io-lt { top: calc(50% - 140px); }
-#intro-overlay .io-lb { top: calc(50% + 140px); }
-#intro-overlay .io-center {
-  position: relative; z-index: 2;
-  display: flex; flex-direction: column; align-items: center; gap: 32px;
-}
-#intro-overlay .io-logo {
-  width: 200px; height: 200px;
-  opacity: 0; transform: scale(0.85) translateY(20px);
-}
-#intro-overlay .io-logo svg { width: 100%; height: 100%; }
-#intro-overlay .io-ring {
-  stroke-dasharray: 1822; stroke-dashoffset: 1822; opacity: 0.3;
-}
-#intro-overlay .io-tag {
-  display: flex; align-items: center; gap: 16px;
-  font-family: 'Outfit','Plus Jakarta Sans',sans-serif;
-  font-size: 0.85rem; font-weight: 300;
-  letter-spacing: 0.35em; text-transform: uppercase;
-  color: rgba(201,168,76,0.7);
-  opacity: 0; transform: translateY(12px);
-}
-#intro-overlay .io-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: rgba(201,168,76,0.5); display: inline-block;
-}
-#intro-overlay .io-curtain {
-  position: absolute; top: 0; width: 51%; height: 100%;
-  background: #040a14; z-index: 10;
-}
-#intro-overlay .io-cl { left: 0; }
-#intro-overlay .io-cr { right: 0; }
+#intro-overlay .io-logo-wrap svg { width: 100%; height: 100%; }
 
-@keyframes io-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes io-fade{from{opacity:0}to{opacity:1}}
-@keyframes io-lin{from{opacity:0;transform:scale(0.85) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
-@keyframes io-ring{from{stroke-dashoffset:1822}to{stroke-dashoffset:0}}
-@keyframes io-tin{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes io-cout{to{opacity:0;transform:scale(0.92)}}
-@keyframes io-cl{from{transform:translateX(0)}to{transform:translateX(-100%)}}
-@keyframes io-cr{from{transform:translateX(0)}to{transform:translateX(100%)}}
-@keyframes io-exit{to{opacity:0;visibility:hidden;pointer-events:none}}
+/* Ring draws in */
+#intro-overlay .io-outer-ring { stroke-dasharray: 1822; stroke-dashoffset: 1822; }
+#intro-overlay.io-go .io-outer-ring { animation: io-draw 0.6s ease-out 0.3s both; }
 
-@media(max-width:768px){
-  #intro-overlay .io-logo{width:160px;height:160px}
-  #intro-overlay .io-tag{font-size:0.72rem;gap:12px;letter-spacing:0.25em}
-  #intro-overlay .io-lt{top:calc(50% - 110px)}
-  #intro-overlay .io-lb{top:calc(50% + 110px)}
+/* Inner circle fades */
+#intro-overlay .io-inner-circle { opacity: 0; }
+#intro-overlay.io-go .io-inner-circle { animation: io-fi 0.4s ease-out 0.6s both; }
+
+/* Deco rings */
+#intro-overlay .io-deco-ring-a { opacity: 0; }
+#intro-overlay.io-go .io-deco-ring-a { animation: io-fi 0.4s ease-out 0.65s both; }
+#intro-overlay .io-deco-ring-b { opacity: 0; }
+#intro-overlay.io-go .io-deco-ring-b { animation: io-fi 0.4s ease-out 0.7s both; }
+
+/* Deco lines */
+#intro-overlay .io-deco { opacity: 0; }
+#intro-overlay.io-go .io-deco { animation: io-fi 0.3s ease-out 0.75s both; }
+
+/* Letters fade in one by one */
+#intro-overlay .io-letter-a { opacity: 0; }
+#intro-overlay.io-go .io-letter-a { animation: io-fi 0.3s ease-out 0.8s both; }
+#intro-overlay .io-letter-s { opacity: 0; }
+#intro-overlay.io-go .io-letter-s { animation: io-fi 0.3s ease-out 0.9s both; }
+#intro-overlay .io-letter-d { opacity: 0; }
+#intro-overlay.io-go .io-letter-d { animation: io-fi 0.3s ease-out 1.0s both; }
+
+/* Rule lines + diamond */
+#intro-overlay .io-rule, #intro-overlay .io-rule-inner, #intro-overlay .io-diamond { opacity: 0; }
+#intro-overlay.io-go .io-rule { animation: io-fi 0.3s ease-out 1.2s both; }
+#intro-overlay.io-go .io-rule-inner { animation: io-fi 0.3s ease-out 1.25s both; }
+#intro-overlay.io-go .io-diamond { animation: io-fi 0.3s ease-out 1.2s both; }
+
+/* DIGITAL text */
+#intro-overlay .io-digital { opacity: 0; }
+#intro-overlay.io-go .io-digital { animation: io-fi 0.4s ease-out 1.4s both; }
+
+@keyframes io-draw { from{stroke-dashoffset:1822} to{stroke-dashoffset:0} }
+@keyframes io-fi { from{opacity:0} to{opacity:1} }
+@keyframes io-fly {
+  0% { transform: translate(0,0) scale(1); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(calc(-50vw + 46px), calc(-50vh + 42px)) scale(0.2); opacity: 0; }
+}
+@keyframes io-bg-out {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
 @media (max-width: 480px) {
