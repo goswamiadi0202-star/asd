@@ -19,31 +19,12 @@
   composes: btn;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   color: var(--navy-deep);
-  position: relative;
-  overflow: hidden;
-}
-
-.btnPrimary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.btnPrimary > * {
-  position: relative;
-  z-index: 1;
 }
 
 .btnPrimary:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 12px 36px rgba(201, 168, 76, 0.45);
-}
-
-.btnPrimary:hover::after {
-  opacity: 1;
 }
 
 .btnSecondary {
