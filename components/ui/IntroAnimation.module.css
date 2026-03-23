@@ -1,139 +1,197 @@
+/* ========================================
+   Ultra-Premium Intro Animation
+   Cinematic reveal with curtain wipe
+   ======================================== */
+
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 99999;
-  background: #060D18;
+  inset: 0;
+  z-index: 100000;
+  background: #040a14;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: bgFadeOut 0.5s ease-in-out 2.5s both;
+  overflow: hidden;
 }
 
-.logoWrap {
-  width: 220px;
-  height: 220px;
-  animation: flyToCorner 0.7s cubic-bezier(0.4, 0, 0.2, 1) 2.1s both;
+.exit {
+  pointer-events: none;
 }
 
-.logoWrap svg {
+/* Ambient gold glow behind logo */
+.ambientGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.glowVisible {
+  opacity: 1;
+}
+
+/* Thin horizontal lines that sweep across */
+.revealLine {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(201, 168, 76, 0.4) 20%, rgba(201, 168, 76, 0.6) 50%, rgba(201, 168, 76, 0.4) 80%, transparent 100%);
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lineTop {
+  top: calc(50% - 140px);
+}
+
+.lineBottom {
+  top: calc(50% + 140px);
+}
+
+.lineIn {
+  transform: scaleX(1);
+}
+
+/* Center container */
+.center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Logo */
+.logoMark {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transform: scale(0.85) translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logoIn {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.logoMark svg {
   width: 100%;
   height: 100%;
 }
 
-/* Outer ring stroke draw */
+/* Outer ring draws in */
 .outerRing {
   stroke-dasharray: 1822;
   stroke-dashoffset: 1822;
-  animation: drawRing 0.6s ease-out 0.3s both;
+  opacity: 0.3;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Inner circle fade */
-.innerCircle {
+.ringDraw {
+  stroke-dashoffset: 0;
+}
+
+/* Tagline */
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.7);
   opacity: 0;
-  animation: fadeIn 0.4s ease-out 0.6s both;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Inner decorative rings */
-.innerRingA {
+.taglineIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.5);
+}
+
+/* Curtain wipe exit */
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #040a14;
+  z-index: 10;
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.curtainLeft {
+  left: 0;
+  transform-origin: left center;
+}
+
+.curtainRight {
+  right: 0;
+  transform-origin: right center;
+}
+
+.curtainOut.curtainLeft {
+  transform: translateX(-100%);
+}
+
+.curtainOut.curtainRight {
+  transform: translateX(100%);
+}
+
+/* When curtains open, fade out the center content */
+.exit .center {
   opacity: 0;
-  animation: fadeInSubtle 0.4s ease-out 0.65s both;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.innerRingB {
+.exit .ambientGlow {
   opacity: 0;
-  animation: fadeInSubtle 0.4s ease-out 0.7s both;
+  transition: opacity 0.3s ease;
 }
 
-/* Decorative lines */
-.decoLineLeft1,
-.decoLineLeft2,
-.decoLineRight1,
-.decoLineRight2 {
+.exit .revealLine {
   opacity: 0;
-  animation: fadeInSubtle 0.3s ease-out 0.75s both;
+  transition: opacity 0.3s ease;
 }
 
-/* Letters */
-.letterA {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out 0.8s both;
-}
-
-.letterS {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out 0.9s both;
-}
-
-.letterD {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out 1.0s both;
-}
-
-/* Rule lines and diamond */
-.ruleLine {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out 1.2s both;
-}
-
-.ruleLineInner {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out 1.25s both;
-}
-
-.diamond {
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out 1.2s both;
-}
-
-/* DIGITAL text */
-.digitalText {
-  opacity: 0;
-  animation: fadeIn 0.4s ease-out 1.4s both;
-}
-
-/* Keyframes */
-
-@keyframes drawRing {
-  from { stroke-dashoffset: 1822; }
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInSubtle {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Logo flies from center to top-left navbar position */
-@keyframes flyToCorner {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
+/* Mobile */
+@media (max-width: 768px) {
+  .logoMark {
+    width: 160px;
+    height: 160px;
   }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(calc(-50vw + 46px), calc(-50vh + 42px)) scale(0.2);
-    opacity: 0;
-  }
-}
 
-/* Background fades out after logo has flown away */
-@keyframes bgFadeOut {
-  from {
-    opacity: 1;
+  .tagline {
+    font-size: 0.72rem;
+    gap: 12px;
+    letter-spacing: 0.25em;
   }
-  to {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+
+  .lineTop {
+    top: calc(50% - 110px);
+  }
+
+  .lineBottom {
+    top: calc(50% + 110px);
   }
 }

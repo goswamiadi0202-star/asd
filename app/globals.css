@@ -124,13 +124,6 @@ html.lenis, html.lenis body {
   overscroll-behavior: contain;
 }
 
-/* Hide cursor on desktop (custom cursor replaces it) */
-@media (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-}
-
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
