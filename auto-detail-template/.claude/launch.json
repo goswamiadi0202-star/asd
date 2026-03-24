@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "detailing",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8095", "--directory", "/Users/adityagoswami/auto-detail-template"],
+      "port": 8095
+    }
+  ]
+}

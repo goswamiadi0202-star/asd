@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "plumbing-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/adityagoswami/plumbing-template", "-l", "3456"],
+      "port": 3456
+    }
+  ]
+}
