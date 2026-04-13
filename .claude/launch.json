@@ -6,6 +6,24 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-c", "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && cd /Users/adityagoswami/asd-digital && npx next dev -p 3000"],
       "port": 3000
+    },
+    {
+      "name": "static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3001", "--directory", "/Users/adityagoswami/asd-digital"],
+      "port": 3001
+    },
+    {
+      "name": "roofing",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/adityagoswami/asd-digital/clients/north-canyon-roofing", "-l", "3847"],
+      "port": 3847
+    },
+    {
+      "name": "medspa-template",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "/Users/adityagoswami/asd-digital/medspa-template", "-l", "3850"],
+      "port": 3850
     }
   ]
 }

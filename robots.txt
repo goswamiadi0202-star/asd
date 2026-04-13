@@ -1,3 +1,35 @@
 User-agent: *
 Allow: /
+
+Disallow: /plumbing-template/
+Disallow: /electrician-template/
+Disallow: /hvac-template/
+Disallow: /auto-detail-template/
+Disallow: /contractor-template/
+Disallow: /medspa-template/
+Disallow: /clients/
+Disallow: /thank-you.html
+
 Sitemap: https://asd-digital.com/sitemap.xml
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /

@@ -1,4 +1,18 @@
 .DS_Store
 .env
 .env.local
+.env.example
 .next
+hero-video.mp4
+medspa-template/
+clients/
+.well-known/
+
+# Uncompressed originals (use *-opt.jpg and *-web.mp4 versions)
+images/video-2.mp4
+images/aerial-video.mp4
+images/office-dark.jpg
+images/office-breakroom.jpg
+images/phoenix-skyline.jpg
+images/desert-home.jpg
+images/desert-hillside.jpg
