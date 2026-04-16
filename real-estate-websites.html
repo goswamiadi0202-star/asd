@@ -303,9 +303,12 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <div class="cap-in">
 <h2>Ready to build a website that actually generates leads?</h2>
 <p class="ss">Free 15-minute strategy call. We will review your current site, identify missed lead capture opportunities, and map out a plan for a website that works.</p>
-<form class="cap-form" name="websites-apply-form" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
-<input type="hidden" name="form-name" value="websites-apply-form">
-<p class="hidden" style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+<form class="cap-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
+<input type="hidden" name="subject" value="Websites Page — Strategy Call Request">
+<input type="hidden" name="from_name" value="ASD Digital Websites Page">
+<input type="hidden" name="redirect" value="https://asd-digital.com/thank-you.html">
+<input type="text" name="honeypot" class="ohnohoney" tabindex="-1" autocomplete="off">
 <div class="fg"><label for="cn">Full Name</label><input type="text" id="cn" name="name" placeholder="Your full name" required></div>
 <div class="fg"><label for="cp">Phone Number</label><input type="tel" id="cp" name="phone" placeholder="(555) 000-0000" required></div>
 <div class="fg"><label for="ce">Email</label><input type="email" id="ce" name="email" placeholder="you@email.com" required></div>
@@ -351,9 +354,12 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <button class="pop-x" id="popX">&times;</button>
 <h3>Before you go -- get a free website audit.</h3>
 <p>We will review your current real estate website and send you a list of specific changes that will improve lead capture and search engine rankings. Drop your email.</p>
-<form class="pop-form" name="playbook-signup" method="POST" action="/thank-you-playbook.html" data-netlify="true" netlify-honeypot="bot-field">
-<input type="hidden" name="form-name" value="playbook-signup">
-<p class="hidden" style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+<form class="pop-form" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
+<input type="hidden" name="subject" value="Website Audit Request — Websites Page">
+<input type="hidden" name="from_name" value="ASD Digital Exit Popup">
+<input type="hidden" name="redirect" value="https://asd-digital.com/thank-you.html">
+<input type="text" name="honeypot" class="ohnohoney" tabindex="-1" autocomplete="off">
 <input type="email" name="email" placeholder="Your email address" required>
 <button type="submit">Get My Free Audit</button>
 </form>
