@@ -235,7 +235,7 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <div class="cap-in">
 <h2>See how we position Scottsdale luxury agents as the authority in their community.</h2>
 <p class="ss">Free 15-minute strategy call. We will walk you through the creative approach, platform mix, and realistic lead projections for your specific Scottsdale market.</p>
-<form class="cap-form" action="https://api.web3forms.com/submit" method="POST">
+<form class="cap-form" action="https://api.web3forms.com/submit" method="POST" data-source="scottsdale-form">
 <input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
 <input type="hidden" name="subject" value="Scottsdale Lead Strategy Request — ASD Digital">
 <input type="hidden" name="from_name" value="ASD Digital Scottsdale Page">
@@ -367,7 +367,7 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <section class="midcap">
 <div class="c">
 <h3>Ready to become the authority in your Scottsdale community?</h3>
-<form class="mid-form" action="https://api.web3forms.com/submit" method="POST">
+<form class="mid-form" action="https://api.web3forms.com/submit" method="POST" data-source="scottsdale-mid-form">
 <input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
 <input type="hidden" name="subject" value="Scottsdale Quick Audit — ASD Digital">
 <input type="hidden" name="from_name" value="ASD Digital Scottsdale Mid-Page">
@@ -429,7 +429,7 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <button class="pop-x" id="popX">&times;</button>
 <h3>Wait -- grab our Scottsdale luxury playbook.</h3>
 <p>How we position Scottsdale agents as the authority in their community and generate exclusive luxury leads. Drop your email and it is yours.</p>
-<form class="pop-form" action="https://api.web3forms.com/submit" method="POST">
+<form class="pop-form" action="https://api.web3forms.com/submit" method="POST" data-source="playbook-popup">
 <input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
 <input type="hidden" name="subject" value="Scottsdale Playbook Download — ASD Digital">
 <input type="hidden" name="from_name" value="ASD Digital Scottsdale Exit Popup">
@@ -468,7 +468,7 @@ px.addEventListener('click',function(){po.classList.remove('show')});
 po.addEventListener('click',function(e){if(e.target===po)po.classList.remove('show')});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
 document.querySelectorAll('[data-track="phone"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','phone_call',{event_category:'conversion'});if(typeof fbq==='function')fbq('track','Contact')})});
-document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit',function(){if(typeof gtag==='function')gtag('event','form_submit',{event_category:'conversion'});if(typeof fbq==='function')fbq('track','Lead')})});
+document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit',function(){try{var data={};new FormData(f).forEach(function(v,k){if(k==='access_key'||k==='subject'||k==='from_name'||k==='redirect'||k==='honeypot')return;data[k]=v});data.source=f.getAttribute('data-source')||f.className||'unknown';data.page=window.location.pathname;fetch('https://hook.us2.make.com/vbx06utcbdvcj0ugs4gks9fbugyiywav',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),keepalive:true}).catch(function(err){console.log('Make.com webhook failed:',err)})}catch(e){console.log('Make.com payload error:',e)}if(typeof gtag==='function')gtag('event','form_submit',{event_category:'conversion'});if(typeof fbq==='function')fbq('track','Lead')})});
 })();
 </script>
 </body>
