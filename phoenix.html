@@ -259,12 +259,9 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <div class="cap-in">
 <h2>See how many exclusive leads we can generate in your Phoenix submarket.</h2>
 <p class="ss">Free 15-minute strategy call. We will show you the ad creative, targeting, and realistic lead volume for your exact area in Phoenix.</p>
-<form class="cap-form" action="https://api.web3forms.com/submit" method="POST">
-<input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
-<input type="hidden" name="subject" value="Phoenix Lead Strategy Request — ASD Digital">
-<input type="hidden" name="from_name" value="ASD Digital Phoenix Page">
-<input type="hidden" name="redirect" value="https://asd-digital.com/thank-you.html">
-<input type="text" name="honeypot" class="ohnohoney" tabindex="-1" autocomplete="off">
+<form class="cap-form" name="phoenix-apply-form" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="phoenix-apply-form">
+<p class="hidden" style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
 <div class="fg"><label for="cn">Full Name</label><input type="text" id="cn" name="name" placeholder="Your full name" required></div>
 <div class="fg"><label for="cp">Phone Number</label><input type="tel" id="cp" name="phone" placeholder="(555) 000-0000" required></div>
 <div class="fg"><label for="ce">Email</label><input type="email" id="ce" name="email" placeholder="you@email.com" required></div>
@@ -325,12 +322,9 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <button class="pop-x" id="popX">&times;</button>
 <h3>Wait -- grab your free Phoenix playbook.</h3>
 <p>Our Phoenix real estate lead generation playbook breaks down how we target 20+ submarkets to get agents 30+ exclusive leads per month. Drop your email and it is yours.</p>
-<form class="pop-form" action="https://api.web3forms.com/submit" method="POST">
-<input type="hidden" name="access_key" value="3fb970af-282e-447e-9df2-446153210220">
-<input type="hidden" name="subject" value="Phoenix Playbook Download — ASD Digital">
-<input type="hidden" name="from_name" value="ASD Digital Phoenix Exit Popup">
-<input type="hidden" name="redirect" value="https://asd-digital.com/thank-you.html">
-<input type="text" name="honeypot" class="ohnohoney" tabindex="-1" autocomplete="off">
+<form class="pop-form" name="playbook-signup" method="POST" action="/thank-you-playbook.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="playbook-signup">
+<p class="hidden" style="display:none"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
 <input type="email" name="email" placeholder="Your email address" required>
 <button type="submit">Get the Playbook</button>
 </form>

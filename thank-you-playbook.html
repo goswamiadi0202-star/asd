@@ -9,10 +9,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thank You | ASD Digital</title>
+<title>Playbook On The Way | ASD Digital</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Thank you for reaching out. Our team will call you within 15 minutes.">
-<link rel="canonical" href="https://asd-digital.com/thank-you.html">
+<meta name="description" content="Thanks — your real estate lead generation playbook is on its way. Check your inbox.">
+<link rel="canonical" href="https://asd-digital.com/thank-you-playbook.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
@@ -55,7 +55,7 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 .ty-direct{display:block;margin-top:20px;font-size:.85rem;color:rgba(255,255,255,.4)}
 .ty-direct a{color:var(--gold);font-weight:600}.ty-direct a:hover{color:var(--gold-light)}
 
-/* -- WHAT HAPPENS NEXT -- */
+/* -- WHAT'S IN THE PLAYBOOK -- */
 .next-section{padding:80px 0;background:var(--navy-deep)}
 .next-section h2{font-family:var(--head);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--white);text-align:center;margin-bottom:48px}
 .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:0 auto}
@@ -91,8 +91,6 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 </head>
 <body>
 
-
-
 <!-- SIMPLIFIED NAV: brand + phone only -->
 <nav class="nav" id="nav">
 <div class="nav-in">
@@ -104,9 +102,9 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <!-- HERO -->
 <section class="ty-hero">
 <div class="ty-inner">
-<div class="ty-badge">CONFIRMED</div>
-<h1>Thanks — I'll <em>reach out</em> within 15 minutes.</h1>
-<p class="ty-sub">While you wait, grab a 15-min slot on my calendar:</p>
+<div class="ty-badge">PLAYBOOK SENT</div>
+<h1>Thanks — check your <em>inbox</em> for the playbook.</h1>
+<p class="ty-sub">Want to talk real numbers for your market? Book a 15-min call:</p>
 <a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener" class="ty-cal" data-track="cal">
 <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
 Book Your 15-Min Call
@@ -115,31 +113,31 @@ Book Your 15-Min Call
 </div>
 </section>
 
-<!-- WHAT HAPPENS NEXT -->
+<!-- WHAT'S INSIDE THE PLAYBOOK -->
 <section class="next-section">
-<h2>What to Expect Next</h2>
+<h2>What's Inside the Playbook</h2>
 <div class="next-grid">
 <div class="next-step">
 <div class="next-num">1</div>
-<h3>We Review Your Info</h3>
-<p>Within minutes of your submission, our team reviews your market, goals, and current setup so we come prepared.</p>
+<h3>The Lead Math</h3>
+<p>Exactly what each lead should cost you on Google, Meta, and TikTok — and how many you need to hit your closing goals.</p>
 </div>
 <div class="next-step">
 <div class="next-num">2</div>
-<h3>We Call You</h3>
-<p>Expect a call or text within 15 minutes during business hours. After hours, we will reach out first thing the next morning.</p>
+<h3>Landing Page Anatomy</h3>
+<p>The 6 elements every real estate landing page needs to convert at 8-12% instead of the 2.6% industry average.</p>
 </div>
 <div class="next-step">
 <div class="next-num">3</div>
-<h3>Free Strategy Session</h3>
-<p>On the call, we will map out your lead pipeline, show you realistic numbers for your market, and give you a clear plan — no pressure, no pitch.</p>
+<h3>Speed-To-Lead Playbook</h3>
+<p>How to follow up in under 60 seconds without lifting a finger — the automation stack that turns more leads into closings.</p>
 </div>
 </div>
 </section>
 
 <!-- PHONE CTA -->
 <section class="phone-cta">
-<p>If you would rather not wait:</p>
+<p>Or skip the playbook and just talk:</p>
 <a href="tel:6027258949" class="big-phone" data-track="phone">(602) 725-8949</a>
 <div><a href="/" class="back-home">Back to Homepage</a></div>
 </section>
@@ -164,7 +162,7 @@ Book Your 15-Min Call
 <!-- CONVERSION EVENTS -->
 <script>
 (function(){
-if(typeof gtag==='function'){gtag('event','conversion_complete');}
+if(typeof gtag==='function'){gtag('event','playbook_download');}
 if(typeof fbq==='function'){fbq('track','Lead');}
 })();
 </script>
@@ -175,11 +173,8 @@ var nav=document.getElementById('nav');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50)});
 
 document.querySelectorAll('[data-track="phone"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','phone_call',{event_category:'conversion'});if(typeof fbq==='function')fbq('track','Contact')})});
+document.querySelectorAll('[data-track="cal"]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','book_call',{event_category:'conversion'});if(typeof fbq==='function')fbq('track','Schedule')})});
 })();
 </script>
-<!-- GTM: <script>(function(w,d,s,l,i){...})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
-<!-- GA4: <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
-<!-- Meta Pixel: <script>!function(f,b,e,v,n,t,s){...}fbq('init','XXXXXXX');fbq('track','PageView');</script> -->
-<!-- Clarity: <script>(function(c,l,a,r,i,t,y){...})(window,document,"clarity","script","XXXXXXX");</script> -->
 </body>
 </html>
