@@ -295,8 +295,41 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:12px 16px;z-index:9000;border-top:2px solid var(--gold);transform:translateY(100%);transition:transform .4s}.sticky-cta.show{transform:translateY(0)}
 .sticky-cta a{display:block;text-align:center;padding:14px;background:var(--gold);color:var(--navy);border-radius:6px;font-weight:700;font-size:.9rem}
 
+/* ── FOUNDER BLOCK ── */
+.founder-blk{padding:80px 0;background:var(--navy-deep);position:relative}
+.founder-blk::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(212,168,83,.04),transparent 60%)}
+.founder-grid{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center;position:relative;max-width:1000px;margin:0 auto}
+.founder-photo{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,#1a1a1a,#0a0a0a);border:1px solid rgba(212,168,83,.2)}
+.founder-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.founder-photo .photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;color:rgba(255,255,255,.3);font-size:.85rem;letter-spacing:.1em;font-style:italic}
+.founder-photo .photo-placeholder svg{width:48px;height:48px;margin-bottom:12px;opacity:.4}
+.founder-text .sl{margin-bottom:20px}
+.founder-text h2{font-family:var(--head);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:18px}
+.founder-text h2 em{font-family:var(--accent);font-style:italic;color:var(--gold);font-weight:400}
+.founder-text p{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:14px}
+.founder-meta{display:flex;gap:24px;margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.founder-meta a{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gold);font-weight:500;letter-spacing:.04em;transition:color .3s}
+.founder-meta a:hover{color:var(--gold-light)}
+.founder-meta svg{width:16px;height:16px;fill:currentColor}
+
+/* ── FOUNDING MEMBERS ── */
+.founding{padding:80px 0;background:var(--navy);position:relative;overflow:hidden}
+.founding::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(212,168,83,.06),transparent 60%)}
+.founding-box{max-width:880px;margin:0 auto;padding:48px 44px;background:rgba(212,168,83,.05);border:1.5px solid rgba(212,168,83,.3);border-radius:12px;text-align:center;position:relative}
+.founding-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:6px 18px;border-radius:20px;margin-bottom:20px}
+.founding-box h2{font-family:var(--head);font-size:clamp(1.8rem,3.5vw,2.4rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:16px}
+.founding-box h2 em{font-family:var(--accent);font-style:italic;color:var(--gold);font-weight:400}
+.founding-box p{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:18px;max-width:640px;margin-left:auto;margin-right:auto}
+.founding-perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 32px}
+.founding-perk{padding:16px 18px;background:rgba(255,255,255,.04);border-radius:6px;font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.5}
+.founding-perk strong{display:block;color:var(--gold);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px}
+.founding-cta{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:var(--gold);color:var(--navy);border-radius:6px;font-size:.9rem;font-weight:700;letter-spacing:.04em;transition:all .3s}
+.founding-cta:hover{background:var(--gold-dark);color:var(--white)}
+.founding-spots{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:14px;font-style:italic}
+.founding-spots strong{color:var(--gold);font-style:normal}
+
 /* ── RESPONSIVE ── */
-@media(max-width:968px){.nav-links,.nav-ph{display:none}.ham{display:flex}.nav-r .btn{padding:8px 16px;font-size:.75rem}.prob-grid,.how-grid,.proof-grid,.test-grid{grid-template-columns:1fr}.cap-form{grid-template-columns:1fr}.sticky-cta{display:block}.founder-q{grid-template-columns:3px 1fr;gap:24px}.proof-card,.test-card{text-align:left}}
+@media(max-width:968px){.nav-links,.nav-ph{display:none}.ham{display:flex}.nav-r .btn{padding:8px 16px;font-size:.75rem}.prob-grid,.how-grid,.proof-grid,.test-grid{grid-template-columns:1fr}.cap-form{grid-template-columns:1fr}.sticky-cta{display:block}.founder-q{grid-template-columns:3px 1fr;gap:24px}.proof-card,.test-card{text-align:left}.founder-grid{grid-template-columns:1fr;gap:32px}.founder-photo{max-width:280px;margin:0 auto}.founding-perks{grid-template-columns:1fr}.founding-box{padding:36px 24px}}
 @media(max-width:768px){.f-grid{grid-template-columns:1fr 1fr;gap:32px}.hero{padding:120px 20px 60px}.mid-form,.pop-form{flex-direction:column}.fcta{padding:100px 0 80px}.proof{padding:80px 0 100px}.test{padding:80px 0 100px}.faq{padding:80px 0 100px}}
 @media(max-width:480px){.f-grid{grid-template-columns:1fr}.hero h1{font-size:2.2rem}.proof-num{font-size:2.6rem}.fcta h2{font-size:1.8rem}}
 </style>
@@ -351,11 +384,11 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <p class="hero-sub" id="heroSub">Exclusive, phone-verified leads for Phoenix agents. No shared leads. No vanity metrics. Just closings.</p>
 <div class="hero-btns" id="heroBtns">
 <a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener" class="btn btn-g magnetic">Get My Free Lead Strategy Call</a>
-<a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener" class="btn btn-o">See Our Results</a>
+<a href="#how" class="btn btn-o">See How It Works</a>
 </div>
-<a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener" class="hero-link" id="heroLink">See how we get realtors 30+ leads/month &rarr;</a>
+<a href="asd-digital-vs-zillow.html" class="hero-link" id="heroLink">Currently on Zillow Premier Agent? See the math &rarr;</a>
 <div class="hero-trust" id="heroTrust">Phoenix-based &nbsp;&bull;&nbsp; One agent per ZIP code &nbsp;&bull;&nbsp; No long-term contracts</div>
-<div class="hero-urgency" id="heroUrgency">Only accepting 3 new clients this month</div>
+<div class="hero-urgency" id="heroUrgency">Founding Members program — accepting first 3 Scottsdale clients</div>
 </div>
 </div>
 </section>
@@ -369,7 +402,7 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <div class="logo-bar-item"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/></svg>Meta Ads</div>
 <div class="logo-bar-item"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="#E4405F"/></svg>Instagram</div>
 <div class="logo-bar-item"><svg viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44.05c1.27.04 2.39.21 3.43.56.53.18 1.02.44 1.46.77.44.33.82.74 1.13 1.2.42.63.71 1.33.86 2.07.17.83.27 1.82.31 2.98.04 1.06.05 1.4.06 3.37v2c-.01 1.97-.02 2.31-.06 3.37-.04 1.16-.14 2.15-.31 2.98a6.27 6.27 0 01-.86 2.07c-.31.46-.69.87-1.13 1.2-.44.33-.93.59-1.46.77-1.04.35-2.16.52-3.43.56-1.3.04-2.6.05-3.91.05h-1.06c-1.31 0-2.61-.01-3.91-.05-1.27-.04-2.39-.21-3.43-.56a6.2 6.2 0 01-1.46-.77 5.44 5.44 0 01-1.13-1.2 6.27 6.27 0 01-.86-2.07c-.17-.83-.27-1.82-.31-2.98C.02 14.31.01 13.97 0 12v-2c.01-1.97.02-2.31.06-3.37.04-1.16.14-2.15.31-2.98.15-.74.44-1.44.86-2.07.31-.46.69-.87 1.13-1.2.44-.33.93-.59 1.46-.77C4.86.26 5.98.09 7.25.05 8.55.01 9.85 0 11.16.02h1.37zm2.27 4.3a.91.91 0 00-.66.29.94.94 0 000 1.33c.18.18.41.28.66.28h.02a.94.94 0 00.66-1.61.91.91 0 00-.68-.29zm-7.84 1.3a5.97 5.97 0 00-4.6 2.2 6.3 6.3 0 00-1.36 4.81 6.18 6.18 0 002.17 4.12A5.97 5.97 0 007.55 18.5a5.97 5.97 0 004.04-.7 6.07 6.07 0 002.34-2.47h-4.15v-2.84h7.24c.1.56.14 1.14.12 1.72a8.26 8.26 0 01-2.47 5.74A7.83 7.83 0 016.96 22.5a8.07 8.07 0 01-5.45-3.36A8.43 8.43 0 01.14 12.8a8.43 8.43 0 012.63-5.58A8.07 8.07 0 018.78 4.7a7.83 7.83 0 015.5 1.5l-2.1 2.1a5.08 5.08 0 00-3.22-1.18z" fill="#fff"/></svg>TikTok</div>
-<div class="logo-bar-item"><svg viewBox="0 0 24 24"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117a3.02 3.02 0 003.017-3.017A3.02 3.02 0 0015.852 1.47h-3.117V7.51zm-1.47 1.471H7.793c-2.476 0-4.49-2.014-4.49-4.49S5.317.982 7.793.982h3.472V8.981zm-3.472-6.528a3.02 3.02 0 00-3.017 3.017 3.02 3.02 0 003.017 3.017h2V2.453h-2zm3.472 7.999v7.999H7.793c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h3.472v.981zm-3.472 6.528a3.02 3.02 0 003.017-3.017v-3.017h-3.017a3.02 3.02 0 00-3.017 3.017 3.02 3.02 0 003.017 3.017zm4.942-6.528h.53c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49a4.494 4.494 0 01-4.49-4.49v-.53l3.96.04zm.53 7.509a3.02 3.02 0 003.017-3.017 3.02 3.02 0 00-3.017-3.017h-.53v2.51a3.556 3.556 0 00.53 3.524z" fill="#fff"/></svg>Shopify</div>
+<div class="logo-bar-item"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/></svg>YouTube</div>
 </div>
 </div>
 </section>
@@ -419,7 +452,33 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <div class="prob-card reveal"><h3>Sphere Marketing</h3><p>Doesn't scale. Doesn't compound. Dries up when you stop hustling.</p></div>
 </div>
 </div>
-<div class="section-cta"><a href="contact.html" class="btn btn-g">See How We're Different</a></div>
+<div class="section-cta" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="asd-digital-vs-zillow.html" class="btn btn-g">See the Zillow Math, Side by Side</a><a href="#how" class="btn btn-o">How We're Different</a></div>
+</div>
+</section>
+
+<!-- S3b: FOUNDER BLOCK -->
+<section class="founder-blk">
+<div class="c">
+<div class="founder-grid">
+<div class="founder-photo">
+<!-- Replace this placeholder with: <img src="images/founder-aditya.jpg" alt="Aditya Goswami, Founder & CEO of ASD Digital"> -->
+<div class="photo-placeholder">
+<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+<span>Founder photo<br>(headshot pending)</span>
+</div>
+</div>
+<div class="founder-text">
+<div class="sl">FROM THE FOUNDER</div>
+<h2>I'm Aditya. I built ASD Digital because <em>realtors deserve better than Zillow's auction.</em></h2>
+<p>I'm a Phoenix entrepreneur who got tired of watching real estate agents — including agents I know personally — burn $3,000/month on Zillow Premier Agent and shared lead platforms only to compete with four other realtors for every conversation.</p>
+<p>ASD Digital is a small, deliberate team based in Phoenix. We run paid ads, build custom websites, and deliver exclusive leads — one agent per ZIP code. No long-term contracts. No shared leads. No theatre.</p>
+<p>If you've got 15 minutes, I'd rather have a real conversation about your market than send you a templated proposal.</p>
+<div class="founder-meta">
+<a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>Book a 15-min call with me</a>
+<a href="tel:6027258949" data-track="phone"><svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02C8.83 6.42 8.64 5.23 8.64 4c0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>(602) 725-8949</a>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -488,21 +547,40 @@ button,input,select,textarea{font-family:var(--body);border:none;outline:none;ba
 <section class="proof">
 <div class="c">
 <div class="tc">
-<div class="sl">RESULTS</div>
-<h2 class="st">Results our clients see.</h2>
+<div class="sl">WHAT WE TARGET</div>
+<h2 class="st">The numbers we build campaigns to hit.</h2>
+<p class="sub" style="font-size:1rem;color:rgba(255,255,255,.5);max-width:620px;margin:8px auto 0">These are the benchmarks we design campaigns around — based on industry data and what comparable Phoenix real estate campaigns produce. Your actual numbers will depend on market, budget, and follow-up speed.</p>
 </div>
 <div class="proof-grid">
-<div class="proof-card reveal"><div class="proof-num">30+</div><div class="proof-label">Exclusive Leads / Month</div><p>Phone-verified. Delivered to your CRM. Never shared.</p></div>
-<div class="proof-card reveal"><div class="proof-num">$18-$35</div><div class="proof-label">Cost Per Lead</div><p>Zillow charges $200-$400. We don't.</p></div>
-<div class="proof-card reveal"><div class="proof-num">8-12%</div><div class="proof-label">Landing Page Conversion</div><p>Industry average is 2.6%.</p></div>
+<div class="proof-card reveal"><div class="proof-num">30+</div><div class="proof-label">Target Leads / Month</div><p>Phone-verified. Delivered to your CRM. Never shared with another agent.</p></div>
+<div class="proof-card reveal"><div class="proof-num">$18-$35</div><div class="proof-label">Target Cost Per Lead</div><p>Zillow Premier Agent typically runs $200-$400 per lead.</p></div>
+<div class="proof-card reveal"><div class="proof-num">8-12%</div><div class="proof-label">Landing Page Conversion</div><p>Industry average is 2.6% — based on Unbounce's real estate benchmark report.</p></div>
 </div>
 <div class="section-cta"><a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener" class="btn btn-g">Book My Free Strategy Call</a></div>
-<p class="proof-disc">Projected based on current campaign benchmarks. Results vary by market, budget, and follow-up speed.</p>
+<p class="proof-disc">These are <strong>targets</strong>, not guaranteed results. ASD Digital is a new agency (founded 2026) — we don't have client case studies yet, and we won't pretend to. The numbers above reflect industry benchmarks for similar campaigns and what we build our work to hit. Your actual results depend on market, budget, and how fast you follow up with leads.</p>
 <div class="founder-q">
 <div>
 <blockquote>"Every dollar you spend with us builds a pipeline you own — not Zillow's, not a referral network's, not an algorithm's."</blockquote>
 <cite>Aditya Goswami, Founder &amp; CEO</cite>
 </div>
+</div>
+</div>
+</section>
+
+<!-- S7: FOUNDING MEMBERS -->
+<section class="founding" id="founding">
+<div class="c">
+<div class="founding-box">
+<div class="founding-tag">FOUNDING MEMBERS PROGRAM</div>
+<h2>The first 3 Scottsdale clients <em>get something special.</em></h2>
+<p>We're a new agency. We don't have client testimonials yet. But we have everything else — Phoenix-local team, custom work, exclusive leads, no contracts. So instead of selling like an established agency, we're treating our first 3 Scottsdale clients differently.</p>
+<div class="founding-perks">
+<div class="founding-perk"><strong>Founding rate</strong>Locked-in pricing for the next 12 months — we won't raise on you.</div>
+<div class="founding-perk"><strong>Direct access</strong>Aditya (founder) personally manages your account. No account-rep handoffs.</div>
+<div class="founding-perk"><strong>Performance shared</strong>We share weekly numbers — leads, conversions, cost — so you see exactly what's working.</div>
+</div>
+<a href="https://cal.com/asddigital/discovery-call-asd-digital" target="_blank" rel="noopener" class="founding-cta">Apply for the Founding 3 →</a>
+<div class="founding-spots"><strong>2 of 3 spots remaining</strong>  ·  Application call is free, takes 15 minutes</div>
 </div>
 </div>
 </section>
